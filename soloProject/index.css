@@ -1,0 +1,80 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    background-image: url("assets/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    user-select: none;
+}
+#hero{
+    margin-top: 160px;
+}
+#header{
+    display: flex;
+    justify-content: center;
+    margin: 25px auto;
+}
+img{
+    width: 260px;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    margin: auto;
+}
+#input-field{
+    color: white;
+    background-color: #1F2937;
+    border: 1px solid #D1FAE5;
+    border-radius: 30px;
+    padding: 15px;
+    margin: 10px 0;
+    text-align: center;
+    font-family: 'Noto Sans Arabic';
+    font-weight: lighter;
+    font-size: 15px;
+    box-shadow: 0 0 8px #D1FAE5;
+}
+#add-button{
+    color: white;
+    background-color: #10B981;
+    border: 0;
+    border-radius: 30px;
+    padding: 15px;
+    margin: 10px 0;
+    font-family: 'Noto Sans Arabic';
+    font-weight: lighter;
+    font-size: 15px;
+    box-shadow: 0 0 8px #10B981;
+}
+#add-button:hover{
+    background-color: #10b981ba;
+    cursor: pointer;
+}
+p{
+    color: grey;
+    text-align: center;
+    font-family: 'Noto Sans Arabic';
+    font-weight: normal;
+}
+ul{
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    border-radius: 30px;
+}
+ul li{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ECFDF5;
+    border-radius: 30px;
+    text-align: center;
+    font-family: 'Noto Sans Arabic';
+    font-weight: normal;
+    box-shadow: 0 0 8px #ECFDF5;
+}
