@@ -9,7 +9,7 @@ html, body {
     user-select: none;
 }
 #hero{
-    margin-top: 160px;
+    margin-top: 130px;
 }
 #header{
     display: flex;
