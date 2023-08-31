@@ -23,15 +23,14 @@ addButtonEl.addEventListener("click", function(){
 })
 
 onValue(missionsInDB, function(snapshot){
-    let missionArray = Object.values(snapshot.val())
-
+    let missionKeys = Object.keys(snapshot.val())
+    let missionValue = Object.values(snapshot.val())
+     //console.log(missionArray)
     clearListsEl()
-
-    for(let i=0;i<missionArray.length;i++){
-        let currentMission = missionArray[i]
-        let currentMissionID = currentMission[0]
-        let currentMissionValue = currentMission[1]
-        appendItemToList(currentMission)
+    let Mission = []
+    for(let i=0;i<missionKeys.length;i++){
+        Mission.push(missionKeys[i] + ":" + missionValue[i])
+        appendItemToList(Mission[i])
     }
 })
 function clearListsEl(){
@@ -42,11 +41,10 @@ function clearInputFieldEl(){
 }
 
 function appendItemToList(mission){
-    let missionID=mission[0]
-    let missionValue=mission[1]
-
+    let missionID=mission.split(":")[0]
+    let missionValue=mission.split(":")[1]
     let newEl = document.createElement("li")
-    newEl.textContent = mission
+    newEl.textContent = missionValue
 
     newEl.addEventListener("click", function(){
         let exactLocationOfMissionInDB = ref(database, `missions/${missionID}`)
