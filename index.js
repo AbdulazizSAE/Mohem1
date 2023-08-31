@@ -12,6 +12,7 @@ const missionsInDB = ref(database, "missions")
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
 const listsEl = document.getElementById("lists")
+const paraEl = document.getElementById("para-el")
 
 addButtonEl.addEventListener("click", function(){
 
@@ -25,12 +26,17 @@ addButtonEl.addEventListener("click", function(){
 onValue(missionsInDB, function(snapshot){
     let missionKeys = Object.keys(snapshot.val())
     let missionValue = Object.values(snapshot.val())
-     //console.log(missionArray)
-    clearListsEl()
-    let Mission = []
-    for(let i=0;i<missionKeys.length;i++){
-        Mission.push(missionKeys[i] + ":" + missionValue[i])
-        appendItemToList(Mission[i])
+
+    if(snapshot.exists()){
+        clearListsEl()
+        let Mission = []
+        for(let i=0;i<missionKeys.length;i++){
+            Mission.push(missionKeys[i] + ":" + missionValue[i])
+            appendItemToList(Mission[i])
+        }
+    }
+    else{
+        paraEl.innerHTML="no missions"
     }
 })
 function clearListsEl(){
